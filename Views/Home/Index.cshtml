@@ -1,0 +1,37 @@
+﻿@using MvcLayoutApp.Models
+@{
+    ViewData["Title"] = "Home Page";
+}
+@model IEnumerable<NewsModel>
+<div class="leftcolumn">
+    @foreach (var n in Model.Reverse())
+    {
+        <div class="card">
+            <h2>@n.Title.ToUpper()</h2>
+            <h5>@n.Title, @n.Date</h5>
+            <div class="fakeimg" style="height:200px;">Изображение</div>
+            <p><b><i>@n.Body</i></b></p>
+            <p>Sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</p>
+        </div>
+    }
+</div>
+
+@section Aside{
+    <div class="rightcolumn">
+    <div class="card">
+      <h2>Обо Мне</h2>
+      <div class="fakeimg" style="height:100px;">Изображение</div>
+      <p>Какой-то текст обо мне in culpa qui officia deserunt mollit anim..</p>
+    </div>
+    <div class="card">
+      <h3>Популярный пост</h3>
+      <div class="fakeimg"><p>Изображение</p></div>
+      <div class="fakeimg"><p>Изображение</p></div>
+      <div class="fakeimg"><p>Изображение</p></div>
+    </div>
+    <div class="card">
+      <h3>Следить за мной</h3>
+      <p>Некоторый текст..</p>
+    </div>
+  </div>
+}
